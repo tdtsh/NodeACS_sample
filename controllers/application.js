@@ -1,6 +1,6 @@
 function index(req, res) {
 	res.render('index', {
-		title: 'Hello World!!! \n<br> Welcome to Node.ACS!' 
+		title: 'This is Node.ACS sample application' 
 	});
 }
 
@@ -8,7 +8,7 @@ function login(req, res) {
 	var uid=req.body.uid;
 	var pwd=req.body.pwd;
 	var name=req.body.name;
-	if (uid==='hntn' && pwd=='pass'){ 
+	if (uid==='myname' && pwd=='pass'){ 
 		req.session.uid=uid;
 		req.session.pwd=pwd;
 		req.session.name=name;
