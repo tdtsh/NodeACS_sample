@@ -1,14 +1,35 @@
 {
-  "routes":
-  [
-    { "path": "/", "callback": "application#index" }
-  ],
-  "filters":
-  [
-  	 { "path": "/", "callback": "" }
-  ],
-  "websockets":
-  [
-  	{ "event": "", "callback": ""}
-  ]
+	"routes": [
+		{ 
+			"path": "/", 
+			"callback": "application#index" 
+		}, 
+		{ 
+			"path": "/home",
+			"callback": "application#home"
+		},
+		{ 
+			"path": "/login",
+			"method":"post",
+			"callback": "application#login"
+		},
+		{ 
+			"path": "/logoff",
+			"callback": "application#logoff"
+		} 
+	],
+	"filters": [
+		 { "path": "/", "callback": "" },
+		{
+			"path": "/home",
+			"callback": "session_filter#validateSession"
+		}
+	],
+	"websockets": [
+		{
+			"event": "",
+			"callback": ""
+		} 
+	] 
 }
+
